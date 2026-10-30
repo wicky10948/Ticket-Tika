@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Ticket Ticka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/checkout.js" defer></script>
+</head>
+<body class="checkout-page">
+  <header class="site-header">
+    <a class="brand" href="index.html"><span class="brand-mark">T<span>✦</span></span><span>Ticket <strong>Ticka</strong></span></a>
+    <a class="text-link" href="index.html">← Back to events</a>
+  </header>
+  <main class="checkout-main section-wrap">
+    <p class="eyebrow">YOUR NEXT MEMORY</p>
+    <h1 class="checkout-title">Reserve your <span>spot.</span></h1>
+    <p class="checkout-intro">No account needed. Enter your details below to continue.</p>
+    <div class="checkout-layout">
+      <form class="checkout-form" id="checkoutForm">
+        <h2>Your details</h2>
+        <p class="form-hint">We'll use these details for your booking confirmation.</p>
+        <label>Full name<input type="text" name="fullName" autocomplete="name" required maxlength="100" placeholder="Enter your full name"></label>
+        <label>Email address<input type="email" name="email" autocomplete="email" required maxlength="150" placeholder="you@example.com"></label>
+        <label>Phone number<input type="tel" name="phone" autocomplete="tel" required maxlength="20" placeholder="+254 7XX XXX XXX"></label>
+        <div class="form-row">
+          <label>Ticket quantity<select id="quantity" name="quantity"><option value="1">1 ticket</option><option value="2">2 tickets</option><option value="3">3 tickets</option><option value="4">4 tickets</option><option value="5">5 tickets</option><option value="6">6 tickets</option></select></label>
+        </div>
+        <fieldset class="payment-methods">
+          <legend>Choose payment method</legend>
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="mpesa" checked>
+            <span class="payment-logo mpesa-logo">M</span>
+            <span class="payment-copy"><strong>M-Pesa</strong><small>Pay using your M-Pesa phone</small></span>
+            <span class="payment-check">✓</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="paymentMethod" value="card">
+            <span class="payment-logo card-logo">▰</span>
+            <span class="payment-copy"><strong>Debit or credit card</strong><small>Visa, Mastercard and supported cards</small></span>
+            <span class="payment-check">✓</span>
+          </label>
+        </fieldset>
+        <p class="demo-notice">There are no events to book right now. Please check back later.</p>
+        <button class="button button-gold checkout-submit" type="submit">Continue to payment <span>↗</span></button>
+        <p class="secure-note">✦ &nbsp; Your details should be handled securely.</p>
+      </form>
+      <aside class="order-summary">
+        <p class="eyebrow">ORDER SUMMARY</p>
+        <div class="summary-event" id="summaryEvent">
+          <div class="summary-image"></div>
+          <div><h3 id="eventTitle">No event selected</h3><p id="eventMeta">No events are currently available.</p></div>
+        </div>
+        <div class="summary-line"><span>Ticket price</span><strong id="ticketPrice">KSh 0</strong></div>
+        <div class="summary-line"><span>Quantity</span><strong id="summaryQuantity">1</strong></div>
+        <div class="summary-line total-line"><span>Total</span><strong id="orderTotal">KSh 0</strong></div>
+        <p class="summary-footnote">Your booking is not confirmed until a real payment provider and backend are connected.</p>
+      </aside>
+    </div>
+    <section class="confirmation-box" id="confirmationBox" hidden>
+      <div class="confirm-icon">✓</div><h2>Checkout demo complete</h2>
+      <p id="confirmationMessage"></p>
+      <p class="form-hint">This is a frontend demonstration only. No ticket has been issued and no payment was taken.</p>
+      <a class="button button-outline" href="index.html">Back to events</a>
+    </section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="index.html"><span class="brand-mark">T<span>✦</span></span><span>Ticket <strong>Ticka</strong></span></a><span class="footer-copy">© <span id="year"></span> Ticket Ticka</span></footer>
+</body>
+</html>

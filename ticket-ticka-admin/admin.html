@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ticket Ticka | Admin Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+  <script src="js/admin.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="admin.html"><span class="brand-mark">T<span>✦</span></span><span>Ticket <strong>Ticka</strong><small>ADMIN STUDIO</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Admin navigation">
+        <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+        <button class="nav-item" data-view="events"><span>✦</span> Events <b id="navEventCount">0</b></button>
+        <button class="nav-item" data-view="orders"><span>▤</span> Orders & payments</button>
+        <button class="nav-item" data-view="customers"><span>♙</span> Customers</button>
+        <button class="nav-item" data-view="checkin"><span>▣</span> Ticket check-in</button>
+      </nav>
+      <div class="sidebar-bottom"><div class="help-card"><span class="help-icon">✧</span><strong>Need a hand?</strong><p>Your event operations, all in one place.</p><a href="mailto:support@ticketticka.example">Contact support ↗</a></div><button class="nav-item" id="publicSiteBtn"><span>↗</span> View public site</button><div class="admin-mini"><div class="avatar">TT</div><div><strong>Ticket Ticka Admin</strong><small>Administrator</small></div><span class="online-dot"></span></div></div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar"><div class="topbar-left"><button class="mobile-menu" id="mobileMenu" aria-label="Open navigation">☰</button><div><p class="breadcrumb">WORKSPACE <span>/</span> <strong id="breadcrumbTitle">Overview</strong></p><h1 id="pageTitle">Good morning, Admin <span>✦</span></h1></div></div><div class="topbar-right"><span class="environment"><i></i> LOCAL DATA</span><button class="icon-button" id="notificationBtn" aria-label="Notifications">♧<i></i></button><div class="top-avatar">TT</div></div></header>
+
+      <section class="view active" id="view-overview">
+        <div class="welcome-row"><div><p class="eyebrow">YOUR EVENT BUSINESS AT A GLANCE</p><h2>Make every moment <em>count.</em></h2><p class="muted">Here’s what’s happening with your events today.</p></div><button class="button button-gold" data-open-event>＋ Create event</button></div>
+        <div class="stat-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total revenue</span><span class="stat-icon">KSh</span></div><strong id="statRevenue">KSh 0</strong><div class="stat-foot"><span class="positive">No sales yet</span><span>no orders recorded</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Tickets sold</span><span class="stat-icon">▤</span></div><strong id="statTickets">0</strong><div class="stat-foot"><span class="positive">No tickets sold</span><span>no orders recorded</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Live events</span><span class="stat-icon">✦</span></div><strong id="statEvents">0</strong><div class="stat-foot"><span class="neutral">● On sale</span><span>across your calendar</span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Pending payments</span><span class="stat-icon">◷</span></div><strong id="statPending">0</strong><div class="stat-foot"><span class="pending-label">No payments pending</span><span>no orders recorded</span></div></article>
+        </div>
+        <div class="content-grid">
+          <section class="panel sales-panel"><div class="panel-heading"><div><p class="eyebrow">PERFORMANCE</p><h3>Sales overview</h3></div><select id="salesRange" aria-label="Sales period"><option value="7">Last 7 days</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></div><div class="chart-summary"><strong id="chartTotal">KSh 0</strong><span class="muted">No sales data yet</span></div><div class="chart chart-empty" role="img" aria-label="No sales data available"><span>No sales data available</span></div></section>
+          <section class="panel quick-panel"><div class="panel-heading"><div><p class="eyebrow">SHORTCUTS</p><h3>Quick actions</h3></div><span class="small-star">✦</span></div><button class="quick-action" data-open-event"><span class="quick-icon gold-icon">＋</span><span><strong>Create a new event</strong><small>Set up your next experience</small></span><b>↗</b></button><button class="quick-action" data-view-link="orders"><span class="quick-icon">▤</span><span><strong>Review transactions</strong><small>Check payment activity</small></span><b>↗</b></button><button class="quick-action" data-view-link="checkin"><span class="quick-icon">▣</span><span><strong>Check in ticket holders</strong><small>Manage event entry</small></span><b>↗</b></button><div class="tip-box"><span>✧</span><p><strong>Pro tip</strong><br>Publish event details early so guests have more time to plan.</p></div></section>
+        </div>
+        <section class="panel table-panel"><div class="panel-heading"><div><p class="eyebrow">KEEP AN EYE ON THESE</p><h3>Upcoming events</h3></div><button class="text-button" data-view-link="events">View all events ↗</button></div><div class="table-wrap"><table><thead><tr><th>EVENT</th><th>DATE</th><th>TICKETS SOLD</th><th>REVENUE</th><th>STATUS</th><th></th></tr></thead><tbody id="overviewEventsBody"></tbody></table></div></section>
+      </section>
+
+      <section class="view" id="view-events"><div class="view-heading"><div><p class="eyebrow">YOUR LINE-UP</p><h2>Event management</h2><p class="muted">Create and manage the experiences listed on Ticket Ticka.</p></div><button class="button button-gold" data-open-event>＋ Create event</button></div><div class="toolbar"><label class="search-field">⌕ <input id="eventTableSearch" type="search" placeholder="Search events..."></label><select id="eventStatusFilter" aria-label="Filter event status"><option value="All">All statuses</option><option value="On sale">On sale</option><option value="Draft">Draft</option><option value="Sold out">Sold out</option></select></div><section class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>EVENT</th><th>DATE & VENUE</th><th>PRICE FROM</th><th>CAPACITY</th><th>STATUS</th><th>ACTIONS</th></tr></thead><tbody id="eventsTableBody"></tbody></table></div><div class="table-empty" id="eventTableEmpty" hidden>No events match your search.</div></section></section>
+
+      <section class="view" id="view-orders"><div class="view-heading"><div><p class="eyebrow">MONEY MOVING</p><h2>Orders & payments</h2><p class="muted">Review orders and their current payment statuses.</p></div><button class="button button-outline" id="exportOrders">↓ Export CSV</button></div><div class="notice"><span>ⓘ</span><p>Orders will appear here after payment processing is connected. Payment status must come from your provider's verified backend callback.</p></div><div class="toolbar"><label class="search-field">⌕ <input id="orderSearch" type="search" placeholder="Search order, customer, reference..."></label><select id="paymentFilter"><option value="All">All payment statuses</option><option>Paid</option><option>Pending</option><option>Failed</option></select></div><section class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>ORDER</th><th>CUSTOMER</th><th>EVENT</th><th>AMOUNT</th><th>METHOD</th><th>STATUS</th><th>DATE</th></tr></thead><tbody id="ordersTableBody"></tbody></table></div><div class="table-empty" id="ordersEmpty" hidden>No transactions found.</div></section></section>
+
+      <section class="view" id="view-customers"><div class="view-heading"><div><p class="eyebrow">YOUR COMMUNITY</p><h2>Customers</h2><p class="muted">Customer details associated with orders.</p></div><span class="environment">LOCAL DATA</span></div><div class="toolbar"><label class="search-field">⌕ <input id="customerSearch" type="search" placeholder="Search customers..."></label></div><section class="panel table-panel"><div class="table-wrap"><table><thead><tr><th>CUSTOMER</th><th>EMAIL</th><th>PHONE</th><th>ORDERS</th><th>TOTAL SPENT</th><th>LAST ORDER</th></tr></thead><tbody id="customersTableBody"></tbody></table></div><div class="table-empty" id="customersEmpty" hidden>No customers found.</div></section></section>
+
+      <section class="view" id="view-checkin"><div class="view-heading"><div><p class="eyebrow">AT THE DOOR</p><h2>Ticket check-in</h2><p class="muted">Look up a ticket code and mark it as checked in.</p></div></div><div class="checkin-layout"><section class="panel checkin-panel"><div class="checkin-symbol">▣</div><h3>Verify a ticket</h3><p class="muted">Enter the ticket/order code from the guest's confirmation.</p><form id="checkinForm"><label for="ticketCode">Ticket or order code</label><div class="checkin-input"><input id="ticketCode" placeholder="Enter ticket or order code" autocomplete="off" required><button class="button button-gold" type="submit">Verify ticket</button></div></form><div id="checkinResult" class="checkin-result" hidden></div><p class="checkin-note">QR scanning can be added after the backend issues unique, signed tickets.</p></section><section class="panel checkin-side"><p class="eyebrow">TICKET CHECK-IN</p><h3>Ticket records</h3><p class="muted">No ticket records are available yet. Orders will appear here when bookings are connected.</p></section></div></section>
+
+      <footer class="admin-footer"><span>© <span id="year"></span> Ticket Ticka</span><span>Built for memorable moments <b>✦</b></span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="eventModal" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="eventModalTitle"><div class="modal-heading"><div><p class="eyebrow">BUILD THE EXPERIENCE</p><h2 id="eventModalTitle">Create an event</h2><p class="muted">Add the essentials. You can refine the details later.</p></div><button class="close-modal" id="closeEventModal" aria-label="Close">×</button></div><form id="eventForm"><div class="form-grid"><label class="form-full">Event name<input id="eventName" name="name" placeholder="Enter event name" required maxlength="80"></label><label>Category<select id="eventCategory" name="category"><option>Music</option><option>Festival</option><option>Nightlife</option><option>Lifestyle</option><option>Business</option><option>Sports</option></select></label><label>Event status<select id="eventStatus" name="status"><option>Draft</option><option>On sale</option></select></label><label>Event date<input id="eventDate" name="date" type="date" required></label><label>Start time<input id="eventTime" name="time" type="time" value="18:00" required></label><label class="form-full">Venue / location<input id="eventVenue" name="venue" placeholder="Enter venue or location" required maxlength="120"></label><label>Ticket price (KSh)<input id="eventPrice" name="price" type="number" min="0" step="1" placeholder="1500" required></label><label>Ticket capacity<input id="eventCapacity" name="capacity" type="number" min="1" step="1" placeholder="500" required></label><label class="form-full">Event poster (optional)<input id="eventPoster" name="poster" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><small>PNG, JPG, WebP or GIF · no app-imposed size limit</small></label><div class="poster-preview-wrap form-full"><img id="eventPosterPreview" class="poster-preview" alt="Event poster preview" hidden></div>
+        </div><div class="modal-actions"><button type="button" class="button button-outline" id="cancelEvent">Cancel</button><button type="submit" class="button button-gold">Save event <span>↗</span></button></div><p class="form-disclaimer">Demo only: events are saved in this browser's local storage and are not yet published to the public website.</p></form></section></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

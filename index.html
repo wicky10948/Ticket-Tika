@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover and book exciting events with Ticket Ticka.">
+  <title>Ticket Ticka | Find Your Next Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Ticket Ticka home">
+      <span class="brand-mark">T<span>✦</span></span>
+      <span>Ticket <strong>Ticka</strong></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#events">Explore events</a>
+      <a href="#how-it-works">How it works</a>
+      <a class="nav-cta" href="#events">Find tickets <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="live-dot"></span> YOUR NEXT EXPERIENCE STARTS HERE</p>
+        <h1>Make room for<br><span>memorable moments.</span></h1>
+        <p class="hero-copy">Discover concerts, festivals, nightlife and experiences worth talking about. Your next great memory is just a ticket away.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="#events">Explore events <span>↗</span></a>
+          <a class="text-link" href="#how-it-works">How it works <span>↓</span></a>
+        </div>
+        <div class="hero-proof">
+          <div class="proof-avatars"><span>✦</span><span>♪</span><span>✧</span></div>
+          <p><strong>Good times, made easy.</strong><br><span>Find an event. Get your ticket. Go.</span></p>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a live music event">
+        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+        <div class="art-card">
+          <div class="art-topline"><span>LIVE EXPERIENCE</span><span>TT / 001</span></div>
+          <div class="art-sun"></div>
+          <div class="art-stage">
+            <span class="beam beam-one"></span><span class="beam beam-two"></span><span class="beam beam-three"></span>
+            <div class="crowd"></div>
+          </div>
+          <div class="art-bottom"><span>FEEL THE MOMENT</span><span>✦</span></div>
+        </div>
+        <div class="floating-tag tag-top">✦ &nbsp; YOUR NIGHT, YOUR WAY</div>
+        <div class="floating-tag tag-bottom"><span class="tag-icon">♫</span><span><strong>Good energy only</strong><small>Experiences that stay with you</small></span></div>
+      </div>
+      <div class="hero-bottom-note"><span>01</span> DISCOVER SOMETHING DIFFERENT <span class="note-line"></span> SCROLL TO EXPLORE ↓</div>
+    </section>
+
+    <section class="events-section section-wrap" id="events">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE GOOD STUFF</p><h2>Find your <span>next thing.</span></h2></div>
+        <p class="section-description">From front-row music to unforgettable nights out, choose the experience that feels like you.</p>
+      </div>
+      <div class="event-tools">
+        <label class="search-box"><span>⌕</span><input id="eventSearch" type="search" placeholder="Search events, places..." aria-label="Search events"><kbd>⌘ K</kbd></label>
+        <div class="category-filters" id="categoryFilters" aria-label="Filter events">
+          <button class="filter-btn active" data-category="All">All events</button>
+          <button class="filter-btn" data-category="Music">Music</button>
+          <button class="filter-btn" data-category="Festival">Festivals</button>
+          <button class="filter-btn" data-category="Nightlife">Nightlife</button>
+          <button class="filter-btn" data-category="Lifestyle">Lifestyle</button>
+                    <button class="filter-btn" data-category="Lifestyle">Football</button>
+        </div>
+      </div>
+      <div class="results-line"><span id="resultsCount">Showing events</span><span class="sort-note">HANDPICKED FOR YOUR NEXT OUTING</span></div>
+      <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+      <div class="empty-state" id="emptyState" hidden><span>✦</span><h3>No events available</h3><p>New events will appear here when they are announced.</p><button class="button button-outline" id="resetFilters">Reset search</button></div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-wrap">
+        <div class="section-heading"><div><p class="eyebrow">NO FUSS. JUST FUN.</p><h2>Your ticket in <span>three steps.</span></h2></div></div>
+        <div class="steps-grid">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Find your event</h3><p>Explore the line-up and pick the experience that gets you excited.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">▤</div><h3>Choose your tickets</h3><p>Select your ticket quantity and provide your contact details at checkout.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">✦</div><h3>Show up & enjoy</h3><p>After secure payment is connected, receive your ticket and get ready to go.</p></article>
+        </div>
+        <div class="trust-banner"><div><span class="trust-star">✦</span><span><strong>Good plans. Great memories.</strong><small>Your next story starts with Ticket Ticka.</small></span></div><a href="#events" class="button button-gold">Find an event <span>↗</span></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand" href="index.html"><span class="brand-mark">T<span>✦</span></span><span>Ticket <strong>Ticka</strong></span></a>
+    <p>Make the moment count.</p>
+    <span class="footer-copy">© <span id="year"></span> Ticket Ticka. All rights reserved.</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
